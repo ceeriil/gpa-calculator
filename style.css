@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #007ea7;
+  background-image: linear-gradient(315deg, #007ea7 0%, #80ced7 74%);
+  color: #fff;
+  text-align: center;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  height: 80%;
+  overflow-y: scroll;
+}
+
+.container .course-card {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  align-items: center;
+}
+
+.container .course {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border: 1px solid #bbb;
+  /*   border-radius: 10px; */
+  margin: 20px 0;
+  position: relative;
+}
+
+.container .course input {
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.container .course input:focus {
+  border: 1px solid #007ea7;
+  border-radius: none;
+  outline: none;
+  padding: 10px;
+}
+
+.container .course select {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+
+.cancel {
+  color: #111;
+}
+
+.cancel-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .course div {
+  border: 1px solid #bbb;
+}
+
+.course-name {
+  grid-column: span 3;
+}
+
+button.calculate {
+  border: none;
+  background-color: #007ea7;
+  background-image: linear-gradient(315deg, #007ea7 0%, #80ced7 74%);
+  padding: 1rem;
+  color: #fff;
+  margin: 10px 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.btn-action {
+  border-radius: 50%;
+  border: 1px solid #007ea7;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  color: #007ea7;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.calculate:hover {
+  background: #12607a;
+}
+
+footer {
+  height: 10%;
+  border-top: 1px solid #bbb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+footer .result {
+  color: #007ea7;
+}
