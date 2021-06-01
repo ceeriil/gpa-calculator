@@ -40,9 +40,7 @@ main {
 }
 
 .container .course-card {
-  display: grid;
-  grid-template-columns: 90% 10%;
-  align-items: center;
+  width: 100%;
 }
 
 .container .course {
@@ -78,16 +76,6 @@ main {
   font-family: inherit;
 }
 
-.cancel {
-  color: #111;
-}
-
-.cancel-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .container .course div {
   border: 1px solid #bbb;
 }
@@ -120,6 +108,12 @@ button.calculate {
   color: #007ea7;
   font-size: 1.2rem;
   font-weight: 300;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
 }
 
 .calculate:hover {

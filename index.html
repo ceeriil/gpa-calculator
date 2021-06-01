@@ -35,11 +35,13 @@
                 </select>
               </div>
               <div class="credit-load">
-                <input type="number" placeholder="Credit Load" maxlength="2" />
+                <input
+                  type="number"
+                  placeholder="Credit Load"
+                  min="1"
+                  max="5"
+                />
               </div>
-            </div>
-            <div class="cancel-box" onclick="removeChild()">
-              <button class="btn-action cancel">x</button>
             </div>
           </div>
           <!-- End of a course card -->
@@ -67,18 +69,27 @@
                 </select>
               </div>
               <div class="credit-load">
-                <input type="number" placeholder="Credit Load" maxlength="2" />
+                <input
+                  type="number"
+                  placeholder="Credit Load"
+                  min="1"
+                  max="5"
+                />
               </div>
-            </div>
-            <div class="cancel-box">
-              <button class="btn-action cancel">x</button>
             </div>
           </div>
 
           <!-- End of course card two -->
         </div>
 
-        <button class="btn-action" onclick="addnew()">+</button>
+        <!-- actions icon -->
+        <div class="actions">
+          <button class="btn-action" onclick="addnew()">+</button>
+
+          <button class="btn-action cancel" onclick="remove()">-</button>
+        </div>
+        <!-- End of actions -->
+
         <button class="calculate">Calculate GPA</button>
       </div>
     </main>
