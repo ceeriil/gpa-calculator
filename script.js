@@ -1,14 +1,14 @@
 //create a new line for inputing course
 function addnew() {
-  let elem = document.createElement('div');
-  elem.classList.add('course-card');
-  const container = document.querySelector('.course-container');
+  let elem = document.createElement("div");
+  elem.classList.add("course-card");
+  const container = document.querySelector(".course-container");
   elem.innerHTML = `            <div class="course">
           <div class="course-name">
             <input
               type="text"
               name="course"
-              id="course1"
+            
               placeholder="Course Name"
             />
           </div>
@@ -24,19 +24,17 @@ function addnew() {
             </select>
           </div>
           <div class="credit-load">
-            <input type="number" placeholder="Credit Load" maxlength="2" />
+            <input type="number" placeholder="Credit Load"  min="1"
+            max="5" />
           </div>
-        </div>
-        <div class="cancel-box">
-          <button class="btn-action cancel">x</button>
         </div>`;
 
-  //delete the last course that was added
   container.appendChild(elem);
 }
-const elem = document.querySelector('course-card');
-function removenew(elem) {
-  while (elem.length > 0) {
-    elem[0].parentNode.removeChild[0];
-  }
+
+//delete the last course that was added
+
+function remove() {
+  const container = document.querySelector(".course-container");
+  container.removeChild(container.lastChild);
 }
