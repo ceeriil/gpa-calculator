@@ -18,8 +18,8 @@
               <div class="course-name">
                 <input type="text" name="course" placeholder="Course Name" />
               </div>
-              <div class="grade">
-                <select name="grade">
+              <div>
+                <select name="grade" class="grade">
                   <option value="none" selected>Grade</option>
                   <option value="a">A</option>
                   <option value="b">B</option>
@@ -48,8 +48,8 @@
               <div class="course-name">
                 <input type="text" name="course" placeholder="Course Name" />
               </div>
-              <div class="grade">
-                <select name="grade">
+              <div>
+                <select name="grade" class="grade">
                   <option value="none" selected>Grade</option>
                   <option value="a">A</option>
                   <option value="b">B</option>
@@ -72,6 +72,32 @@
           </div>
 
           <!-- End of course card two -->
+
+          <div class="course">
+            <div class="course-name">
+              <input type="text" name="course" placeholder="Course Name" />
+            </div>
+            <div>
+              <select name="grade" class="grade">
+                <option value="none" selected>Grade</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+                <option value="d">D</option>
+                <option value="e">E</option>
+                <option value="f">F</option>
+              </select>
+            </div>
+            <div class="credit-load">
+              <input
+                type="number"
+                placeholder="Credit Load"
+                min="1"
+                max="5"
+                class="credit-input"
+              />
+            </div>
+          </div>
         </div>
 
         <!-- actions icon -->
@@ -82,9 +108,7 @@
         </div>
         <!-- End of actions -->
 
-        <button class="calculate" onclick="getCreditLoad()">
-          Calculate GPA
-        </button>
+        <button class="calculate" onclick="calcGPA()">Calculate GPA</button>
       </div>
     </main>
     <footer>
