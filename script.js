@@ -25,11 +25,17 @@ function addnew() {
           </div>
           <div class="credit-load">
             <input type="number" placeholder="Credit Load"  min="1"
-            max="5" />
+            max="5" class="credit-input"/>
           </div>
         </div>`;
 
-  container.appendChild(elem);
+  let coursecard = document.querySelectorAll("coursecard");
+
+  if (coursecard.length < 4) {
+    container.appendChild(elem);
+  } else if (coursecard.length > 4) {
+    alert("maximum courses");
+  }
 }
 
 //delete the last course that was added
@@ -37,4 +43,14 @@ function addnew() {
 function remove() {
   const container = document.querySelector(".course-container");
   container.removeChild(container.lastChild);
+}
+
+//total credit load
+function getCreditLoad() {
+  var arr = document.querySelectorAll(".credit-input");
+  let sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (parseInt(arr[i].value)) sum += parseInt(arr[i].value);
+  }
+  console.log(sum);
 }

@@ -16,12 +16,7 @@
           <div class="course-card">
             <div class="course">
               <div class="course-name">
-                <input
-                  type="text"
-                  name="course"
-                  id="course1"
-                  placeholder="Course Name"
-                />
+                <input type="text" name="course" placeholder="Course Name" />
               </div>
               <div class="grade">
                 <select name="grade">
@@ -40,6 +35,7 @@
                   placeholder="Credit Load"
                   min="1"
                   max="5"
+                  class="credit-input"
                 />
               </div>
             </div>
@@ -50,12 +46,7 @@
           <div class="course-card">
             <div class="course">
               <div class="course-name">
-                <input
-                  type="text"
-                  name="course"
-                  id="course1"
-                  placeholder="Course Name"
-                />
+                <input type="text" name="course" placeholder="Course Name" />
               </div>
               <div class="grade">
                 <select name="grade">
@@ -74,6 +65,7 @@
                   placeholder="Credit Load"
                   min="1"
                   max="5"
+                  class="credit-input"
                 />
               </div>
             </div>
@@ -90,7 +82,9 @@
         </div>
         <!-- End of actions -->
 
-        <button class="calculate">Calculate GPA</button>
+        <button class="calculate" onclick="getCreditLoad()">
+          Calculate GPA
+        </button>
       </div>
     </main>
     <footer>
