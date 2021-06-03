@@ -60,6 +60,7 @@ function getCreditLoad() {
   }
   const totalCredits = sum;
   console.log(totalCredits);
+  creditLoadTotal.textContent = totalCredits;
 }
 
 //object to convert grades to their respective grade points
@@ -71,6 +72,10 @@ const GRADES = {
   e: 1,
   f: 0,
 };
+
+let gpTotal = document.getElementById("Gp-total");
+let creditLoadTotal = document.getElementById("credit-load");
+let GPA = document.getElementById("result");
 
 let gpArray = [];
 
@@ -93,7 +98,15 @@ function calcGPA() {
     let sum = 0;
     for (let i = 0; i < numbers.length; i++) sum += numbers[i];
     console.log(sum);
+    gpTotal.textContent = sum;
   };
   const totalCL = getCreditLoad();
   const totalGp = sumGradePoint(...gpArray);
+
+  let Gpa = 0;
+  const gpTotalText = gpTotal.textContent;
+  const creditLoadTotalText = creditLoadTotal.textContent;
+  Gpa = gpTotalText / creditLoadTotalText;
+  console.log(Gpa);
+  GPA.textContent = Gpa.toFixed(2);
 }

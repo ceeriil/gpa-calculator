@@ -35,7 +35,7 @@ header {
 }
 
 main {
-  height: 80%;
+  height: 75%;
   overflow-y: scroll;
 }
 
@@ -121,15 +121,23 @@ button.calculate {
 }
 
 footer {
-  height: 10%;
+  height: 15%;
   border-top: 1px solid #bbb;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: center;
+  width: 100%;
 }
 
 footer .result {
   color: #007ea7;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 0.5px dotted #bbb;
 }
