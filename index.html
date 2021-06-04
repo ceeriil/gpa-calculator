@@ -16,15 +16,10 @@
           <div class="course-card">
             <div class="course">
               <div class="course-name">
-                <input
-                  type="text"
-                  name="course"
-                  id="course1"
-                  placeholder="Course Name"
-                />
+                <input type="text" name="course" placeholder="Course Name" />
               </div>
-              <div class="grade">
-                <select name="grade">
+              <div>
+                <select name="grade" class="grade">
                   <option value="none" selected>Grade</option>
                   <option value="a">A</option>
                   <option value="b">B</option>
@@ -40,6 +35,7 @@
                   placeholder="Credit Load"
                   min="1"
                   max="5"
+                  class="credit-input"
                 />
               </div>
             </div>
@@ -50,15 +46,10 @@
           <div class="course-card">
             <div class="course">
               <div class="course-name">
-                <input
-                  type="text"
-                  name="course"
-                  id="course1"
-                  placeholder="Course Name"
-                />
+                <input type="text" name="course" placeholder="Course Name" />
               </div>
-              <div class="grade">
-                <select name="grade">
+              <div>
+                <select name="grade" class="grade">
                   <option value="none" selected>Grade</option>
                   <option value="a">A</option>
                   <option value="b">B</option>
@@ -74,12 +65,39 @@
                   placeholder="Credit Load"
                   min="1"
                   max="5"
+                  class="credit-input"
                 />
               </div>
             </div>
           </div>
 
           <!-- End of course card two -->
+
+          <div class="course">
+            <div class="course-name">
+              <input type="text" name="course" placeholder="Course Name" />
+            </div>
+            <div>
+              <select name="grade" class="grade">
+                <option value="none" selected>Grade</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+                <option value="d">D</option>
+                <option value="e">E</option>
+                <option value="f">F</option>
+              </select>
+            </div>
+            <div class="credit-load">
+              <input
+                type="number"
+                placeholder="Credit Load"
+                min="1"
+                max="5"
+                class="credit-input"
+              />
+            </div>
+          </div>
         </div>
 
         <!-- actions icon -->
@@ -90,11 +108,16 @@
         </div>
         <!-- End of actions -->
 
-        <button class="calculate">Calculate GPA</button>
+        <button class="calculate" onclick="calcGPA()">Calculate GPA</button>
       </div>
     </main>
     <footer>
-      <h2>Your GPA IS <span class="result">3.50</span></h2>
+      <div>
+        <p>Total GP: <span id="Gp-total">0</span></p>
+        <p>credit Load: <span id="credit-load">0</span></p>
+      </div>
+
+      <h3>Your GPA IS <span id="result">0.00</span></h3>
     </footer>
 
     <script src="./script.js"></script>
