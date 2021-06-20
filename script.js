@@ -1,35 +1,25 @@
 //create a new line for inputing course
+
 function addnew() {
   let elem = document.createElement("div");
   elem.classList.add("course-card");
   const container = document.querySelector(".course-container");
-  elem.innerHTML = `      <div class="course">
-  <div class="course-name">
-    <input type="text" name="course" placeholder="Course Name" />
-  </div>
-  <div>
-    <select name="grade" class="grade">
-      <option value="none" selected>Grade</option>
-      <option value="a">A</option>
-      <option value="b">B</option>
-      <option value="c">C</option>
-      <option value="d">D</option>
-      <option value="e">E</option>
-      <option value="f">F</option>
-    </select>
-  </div>
-  <div class="credit-load">
-    <input
-      type="number"
-      placeholder="Credit Load"
-      min="1"
-      max="5"
-      class="credit-input"
-    />
-  </div>
-</div>`;
+  elem.innerHTML = `     
+   <div class="course">
+        <div class="course-name"> <input type="text" name="course" placeholder="Course Name" /></div>
+        <div>
+          <select name="grade" class="grade">
+            <option value="none" selected>Grade</option>
+            <option value="a">A</option> <option value="b">B</option> <option value="c">C</option>
+            <option value="d">D</option><option value="e">E</option><option value="f">F</option>
+          </select>
+        </div>
+        <div class="credit-load"> <input type="number" placeholder="Credit Load" min="1" max="5" class="credit-input"/> </div>
+   </div>`;
 
-  let coursecard = document.querySelectorAll("coursecard");
+  let coursecard = document.querySelectorAll(".course-card");
+  alert("kdkkd");
+  if (coursecard.length > 4) return window.alert(" 4 is the maximum courses");
 
   if (coursecard.length < 4) {
     container.appendChild(elem);
@@ -43,6 +33,7 @@ function addnew() {
 function remove() {
   const container = document.querySelector(".course-container");
   container.removeChild(container.lastChild);
+  return;
 }
 
 //total credit load
@@ -82,31 +73,32 @@ let gpArray = [];
 function calcGPA() {
   let creditLoads = document.querySelectorAll(".credit-input");
   let grades = document.querySelectorAll(".grade");
+  console.log(grades, creditLoads);
 
-  for (let i = 0; i < grades.length; ++i) {
-    let creditLoad = creditLoads[i].value;
-    let grade = grades[i].value;
-    /* let gradePoint = GRADES[grades]; */
+  // for (let i = 0; i < grades.length; ++i) {
+  //   let creditLoad = creditLoads[i].value;
+  //   let grade = grades[i].value;
+  //   /* let gradePoint = GRADES[grades]; */
 
-    let gradePoint = GRADES[grade];
-    const gp = gradePoint * creditLoad;
-    gpArray.push(gp);
-  }
+  //   let gradePoint = GRADES[grade];
+  //   const gp = gradePoint * creditLoad;
+  //   gpArray.push(gp);
+  // }
 
-  // Get Total value for everything
-  const sumGradePoint = function (...numbers) {
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-    console.log(sum);
-    gpTotal.textContent = sum;
-  };
-  const totalCL = getCreditLoad();
-  const totalGp = sumGradePoint(...gpArray);
+  // // Get Total value for everything
+  // const sumGradePoint = function (...numbers) {
+  //   let sum = 0;
+  //   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  //   console.log(sum);
+  //   gpTotal.textContent = sum;
+  // };
+  // const totalCL = getCreditLoad();
+  // const totalGp = sumGradePoint(...gpArray);
 
-  let Gpa = 0;
-  const gpTotalText = gpTotal.textContent;
-  const creditLoadTotalText = creditLoadTotal.textContent;
-  Gpa = gpTotalText / creditLoadTotalText;
-  console.log(Gpa);
-  GPA.textContent = Gpa.toFixed(2);
+  // let Gpa = 0;
+  // const gpTotalText = gpTotal.textContent;
+  // const creditLoadTotalText = creditLoadTotal.textContent;
+  // Gpa = gpTotalText / creditLoadTotalText;
+  // console.log(Gpa);
+  // GPA.textContent = Gpa.toFixed(2);
 }
