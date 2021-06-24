@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GPA Calculator</title>
     <link rel="stylesheet" href="style.css" />
@@ -32,75 +31,17 @@
               <div class="credit-load">
                 <input
                   type="number"
-                  placeholder="Credit Load"
+                  placeholder="Credit Unit"
                   min="1"
                   max="5"
                   class="credit-input"
+                  id="credit-input-0"
                 />
               </div>
             </div>
           </div>
           <!-- End of a course card -->
-
-          <!-- Course Card 2 -->
-          <div class="course-card">
-            <div class="course">
-              <div class="course-name">
-                <input type="text" name="course" placeholder="Course Name" />
-              </div>
-              <div>
-                <select name="grade" class="grade">
-                  <option value="none" selected>Grade</option>
-                  <option value="a">A</option>
-                  <option value="b">B</option>
-                  <option value="c">C</option>
-                  <option value="d">D</option>
-                  <option value="e">E</option>
-                  <option value="f">F</option>
-                </select>
-              </div>
-              <div class="credit-load">
-                <input
-                  type="number"
-                  placeholder="Credit Load"
-                  min="1"
-                  max="5"
-                  class="credit-input"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- End of course card two -->
-
-          <div class="course">
-            <div class="course-name">
-              <input type="text" name="course" placeholder="Course Name" />
-            </div>
-            <div>
-              <select name="grade" class="grade">
-                <option value="none" selected>Grade</option>
-                <option value="a">A</option>
-                <option value="b">B</option>
-                <option value="c">C</option>
-                <option value="d">D</option>
-                <option value="e">E</option>
-                <option value="f">F</option>
-              </select>
-            </div>
-            <div class="credit-load">
-              <input
-                type="number"
-                placeholder="Credit Load"
-                min="1"
-                max="5"
-                class="credit-input"
-              />
-            </div>
-          </div>
         </div>
-
-        <!-- actions icon -->
         <div class="actions">
           <button class="btn-action" onclick="addnew()">+</button>
 
@@ -108,17 +49,25 @@
         </div>
         <!-- End of actions -->
 
-        <button class="calculate" onclick="calcGPA()">Calculate GPA</button>
+        <button class="calculate primary-btn" onclick="calcGPA()">
+          Calculate GPA
+        </button>
       </div>
     </main>
-    <footer>
-      <div>
-        <p>Total GP: <span id="Gp-total">0</span></p>
-        <p>credit Load: <span id="credit-load">0</span></p>
-      </div>
 
-      <h3>Your GPA IS <span id="result">0.00</span></h3>
-    </footer>
+    <div class="overlay-r">
+      <div class="result-box">
+        <div class="box-top">
+          <h2>📯</h2>
+          <h1>Your GPA IS <span id="result">0.00</span></h1>
+          <button class="primary-btn" onclick="hideResultBox()">Close</button>
+        </div>
+        <div class="box-bottom">
+          <p>Total GP: <span id="Gp-total">0</span></p>
+          <p class="grid-line">credit Load: <span id="credit-load">0</span></p>
+        </div>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
   </body>
