@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -24,8 +22,8 @@ button {
 }
 
 header {
-  background-color: #007ea7;
-  background-image: linear-gradient(315deg, #007ea7 0%, #80ced7 74%);
+  background-color: #131922;
+  /* background-image: linear-gradient(315deg, #007ea7 0%, #80ced7 74%); */
   color: #fff;
   text-align: center;
   height: 10%;
@@ -35,7 +33,7 @@ header {
 }
 
 main {
-  height: 75%;
+  height: 90%;
   overflow-y: scroll;
 }
 
@@ -84,28 +82,33 @@ main {
   grid-column: span 3;
 }
 
-button.calculate {
+button.primary-btn {
   border: none;
-  background-color: #007ea7;
-  background-image: linear-gradient(315deg, #007ea7 0%, #80ced7 74%);
+  background-color: #2d4fc6;
+  /* background-image: linear-gradient(315deg, #007ea7 0%, #80ced7 74%); */
   padding: 1rem;
   color: #fff;
   margin: 10px 0;
+
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.primary-btn.calculate {
   margin-left: 50%;
   transform: translateX(-50%);
-  cursor: pointer;
 }
 
 .btn-action {
   border-radius: 50%;
-  border: 1px solid #007ea7;
+  border: 1px solid #2d4fc6;
   height: 30px;
   width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: none;
-  color: #007ea7;
+  background-color: #fff;
+  color: #2d4fc6;
   font-size: 1.2rem;
   font-weight: 300;
   cursor: pointer;
@@ -116,28 +119,68 @@ button.calculate {
   justify-content: space-between;
 }
 
-.calculate:hover {
+.primary-btn:hover {
   background: #12607a;
 }
 
-footer {
-  height: 15%;
-  border-top: 1px solid #bbb;
+.overlay-r {
+  position: fixed;
+  z-index: 222;
+  top: 0;
+  right: 0;
+  background-color: rgba(10, 10, 10, 0.2);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(1px);
+  transition: 0.3s ease;
+  height: 100%;
+  width: 100%;
+}
+
+.result-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: center;
-  width: 100%;
+  width: 80%;
+  background-color: #fff;
+  margin: 0 auto;
+  transform: translateY(200%);
+  transition: 1s ease-in;
+  border-radius: 5px;
 }
 
-footer .result {
+.result-box .result {
   color: #007ea7;
 }
 
-footer div {
+.result-box .box-top {
+  height: 45vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #3f3f3f;
+}
+
+.result-box .box-top h2 {
+  font-size: 5rem;
+}
+
+.box-bottom {
+  display: grid;
+  grid-template-columns: auto auto;
   width: 100%;
-  border-bottom: 0.5px dotted #bbb;
+  color: #fff;
+  background-color: #131922;
+}
+
+.box-bottom p {
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+
+.box-bottom .grid-line {
+  border-left: 2px double #fff;
 }
